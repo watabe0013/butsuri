@@ -1,1 +1,1 @@
-https://watabe0013.github.io/test0/
+https://watabe0013.github.io/butsuri/
