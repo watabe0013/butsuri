@@ -16,7 +16,7 @@
             align-items: center;
         }
         header {
-            background: #f5f5f5; /* 余白と統一 */
+            background: #f5f5f5;
             color: black;
             padding: 20px;
             font-size: 24px;
@@ -30,7 +30,7 @@
         }
         .container {
             display: flex;
-            margin-top: 100px; /* ヘッダーとタブの間に余白 */
+            margin-top: 100px;
             width: 100%;
             max-width: 1680px;
             margin-left: auto;
@@ -43,7 +43,7 @@
             height: 100vh;
             position: fixed;
             left: 0;
-            top: 100px; /* ヘッダーの高さに合わせる */
+            top: 100px;
             overflow-y: auto;
         }
         .sidebar a {
@@ -55,18 +55,22 @@
         .sidebar a:hover {
             background: #bbb;
         }
-        .main-content {
+        .content-wrapper {
             flex-grow: 1;
             margin-left: 220px;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .content-header {
+            background: #f5f5f5; /* 余白と同じ色 */
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
         }
         .tab-container {
             display: flex;
             justify-content: center;
-            margin-bottom: 10px;
+            background: #f5f5f5; /* 余白の色に統一 */
+            padding: 10px 0;
         }
         .tab {
             padding: 12px 20px;
@@ -86,6 +90,12 @@
             top: 0;
             box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
         }
+        .main-content {
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
         .content {
             display: none;
         }
@@ -98,9 +108,8 @@
             .sidebar {
                 display: none;
             }
-            .main-content {
+            .content-wrapper {
                 margin-left: 0;
-                padding: 20px;
             }
         }
     </style>
@@ -117,7 +126,9 @@
             <a href="#relation">力学での使い方</a>
         </div>
 
-        <div class="main-content">
+        <div class="content-wrapper">
+            <div class="content-header">力学の解説</div>
+
             <div class="tab-container">
                 <div class="tab active" onclick="showContent('mechanics', this)">力学</div>
                 <div class="tab" onclick="showContent('electromagnetism', this)">電磁気学</div>
@@ -125,48 +136,50 @@
                 <div class="tab" onclick="showContent('thermodynamics', this)">熱力学</div>
             </div>
 
-            <div id="mechanics" class="content active">
-                <h2>力学</h2>
-                <section id="diff">
-                    <h3>微分とは？</h3>
-                    <p>微分は「変化の速さ」を見る方法です。例えば、位置の変化の速さが「速度」、速度の変化の速さが「加速度」です。</p>
-                    <p>数学的には：</p>
-                    <pre>速度 v = dx/dt</pre>
-                    <p>という形で表されます。</p>
-                </section>
+            <div class="main-content">
+                <div id="mechanics" class="content active">
+                    <h2>力学</h2>
+                    <section id="diff">
+                        <h3>微分とは？</h3>
+                        <p>微分は「変化の速さ」を見る方法です。例えば、位置の変化の速さが「速度」、速度の変化の速さが「加速度」です。</p>
+                        <p>数学的には：</p>
+                        <pre>速度 v = dx/dt</pre>
+                        <p>という形で表されます。</p>
+                    </section>
 
-                <section id="integral">
-                    <h3>積分とは？</h3>
-                    <p>積分は「合計する」ことです。速度を積分すると、位置の変化がわかります。</p>
-                    <p>数学的には：</p>
-                    <pre>位置 x = ∫ v dt</pre>
-                    <p>という形で表されます。</p>
-                </section>
+                    <section id="integral">
+                        <h3>積分とは？</h3>
+                        <p>積分は「合計する」ことです。速度を積分すると、位置の変化がわかります。</p>
+                        <p>数学的には：</p>
+                        <pre>位置 x = ∫ v dt</pre>
+                        <p>という形で表されます。</p>
+                    </section>
 
-                <section id="relation">
-                    <h3>力学での使い方</h3>
-                    <p>力学では、微分と積分を使って、運動を解析します。</p>
-                    <ul>
-                        <li>位置を微分すると速度</li>
-                        <li>速度を微分すると加速度</li>
-                        <li>加速度を積分すると速度</li>
-                    </ul>
-                </section>
-            </div>
+                    <section id="relation">
+                        <h3>力学での使い方</h3>
+                        <p>力学では、微分と積分を使って、運動を解析します。</p>
+                        <ul>
+                            <li>位置を微分すると速度</li>
+                            <li>速度を微分すると加速度</li>
+                            <li>加速度を積分すると速度</li>
+                        </ul>
+                    </section>
+                </div>
 
-            <div id="electromagnetism" class="content">
-                <h2>電磁気学</h2>
-                <p>準備中...</p>
-            </div>
+                <div id="electromagnetism" class="content">
+                    <h2>電磁気学</h2>
+                    <p>準備中...</p>
+                </div>
 
-            <div id="waves" class="content">
-                <h2>波動</h2>
-                <p>準備中...</p>
-            </div>
+                <div id="waves" class="content">
+                    <h2>波動</h2>
+                    <p>準備中...</p>
+                </div>
 
-            <div id="thermodynamics" class="content">
-                <h2>熱力学</h2>
-                <p>準備中...</p>
+                <div id="thermodynamics" class="content">
+                    <h2>熱力学</h2>
+                    <p>準備中...</p>
+                </div>
             </div>
         </div>
     </div>
