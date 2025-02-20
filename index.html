@@ -11,20 +11,59 @@
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
-            text-align: center;
+            display: flex;
         }
         header {
             background: #333;
             color: white;
             padding: 20px;
             font-size: 24px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        .container {
+            display: flex;
+            margin-top: 70px;
+            width: 100%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .sidebar {
+            width: 250px;
+            background: #ddd;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 70px;
+            overflow-y: auto;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background: #bbb;
+        }
+        .main-content {
+            flex-grow: 1;
+            margin-left: 270px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
         }
         .tab-container {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 10px;
         }
         .tab {
             padding: 12px 20px;
@@ -44,22 +83,21 @@
             top: 0;
             box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
         }
-        .content-container {
-            background: white;
-            margin: 0 auto;
-            max-width: 800px;
-            padding: 20px;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            position: relative;
-            z-index: 0;
-        }
         .content {
             display: none;
-            text-align: left;
         }
         .content.active {
             display: block;
+        }
+
+        /* スマホ対応 */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+            .main-content {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
@@ -67,51 +105,76 @@
 
     <header>高校物理解説</header>
 
-    <div class="tab-container">
-        <div class="tab active" onclick="showContent('mechanics', this)">力学</div>
-        <div class="tab" onclick="showContent('electromagnetism', this)">電磁気学</div>
-        <div class="tab" onclick="showContent('waves', this)">波動</div>
-        <div class="tab" onclick="showContent('thermodynamics', this)">熱力学</div>
-    </div>
-
-    <div class="content-container">
-        <div id="mechanics" class="content active">
-            <h2>力学</h2>
-            <p>支配する法則は運動方程式のみであり、それ以外の力学的エネルギー保存則などは運動方程式を数学的に書き換えたものである。故に力学とは運動方程式を形を変えて解いているにすぎない。</p>
-            <p>例: 運動方程式 <code>F = ma</code> を使って物体の運動を求める。</p>
-            <img src="images/mechanics_example.png" alt="力学の例" width="100%">
+    <div class="container">
+        <div class="sidebar">
+            <h3>力学の目次</h3>
+            <a href="#diff">微分とは？</a>
+            <a href="#integral">積分とは？</a>
+            <a href="#relation">力学での使い方</a>
         </div>
 
-        <div id="electromagnetism" class="content">
-            <h2>電磁気学</h2>
-            <p>準備中...</p>
-        </div>
+        <div class="main-content">
+            <div class="tab-container">
+                <div class="tab active" onclick="showContent('mechanics', this)">力学</div>
+                <div class="tab" onclick="showContent('electromagnetism', this)">電磁気学</div>
+                <div class="tab" onclick="showContent('waves', this)">波動</div>
+                <div class="tab" onclick="showContent('thermodynamics', this)">熱力学</div>
+            </div>
 
-        <div id="waves" class="content">
-            <h2>波動</h2>
-            <p>準備中...</p>
-        </div>
+            <div id="mechanics" class="content active">
+                <h2>力学</h2>
+                <section id="diff">
+                    <h3>微分とは？</h3>
+                    <p>微分は「変化の速さ」を見る方法です。例えば、位置の変化の速さが「速度」、速度の変化の速さが「加速度」です。</p>
+                    <p>数学的には：</p>
+                    <pre>速度 v = dx/dt</pre>
+                    <p>という形で表されます。</p>
+                </section>
 
-        <div id="thermodynamics" class="content">
-            <h2>熱力学</h2>
-            <p>準備中...</p>
+                <section id="integral">
+                    <h3>積分とは？</h3>
+                    <p>積分は「合計する」ことです。速度を積分すると、位置の変化がわかります。</p>
+                    <p>数学的には：</p>
+                    <pre>位置 x = ∫ v dt</pre>
+                    <p>という形で表されます。</p>
+                </section>
+
+                <section id="relation">
+                    <h3>力学での使い方</h3>
+                    <p>力学では、微分と積分を使って、運動を解析します。</p>
+                    <ul>
+                        <li>位置を微分すると速度</li>
+                        <li>速度を微分すると加速度</li>
+                        <li>加速度を積分すると速度</li>
+                    </ul>
+                </section>
+            </div>
+
+            <div id="electromagnetism" class="content">
+                <h2>電磁気学</h2>
+                <p>準備中...</p>
+            </div>
+
+            <div id="waves" class="content">
+                <h2>波動</h2>
+                <p>準備中...</p>
+            </div>
+
+            <div id="thermodynamics" class="content">
+                <h2>熱力学</h2>
+                <p>準備中...</p>
+            </div>
         </div>
     </div>
 
     <script>
         function showContent(id, element) {
-            // すべてのコンテンツを非表示
             const sections = document.querySelectorAll('.content');
             sections.forEach(section => section.classList.remove('active'));
-
-            // 選択されたコンテンツを表示
             document.getElementById(id).classList.add('active');
 
-            // すべてのタブの選択を解除
             const tabs = document.querySelectorAll('.tab');
             tabs.forEach(tab => tab.classList.remove('active'));
-
-            // クリックされたタブをアクティブにする
             element.classList.add('active');
         }
     </script>
