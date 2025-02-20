@@ -20,27 +20,37 @@
         .container {
             padding: 20px;
         }
-        .button-container {
-            text-align: center;
+        .tab-container {
+            display: flex;
+            border-bottom: 2px solid #ccc;
             margin-bottom: 20px;
         }
-        .button-container button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
+        .tab {
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-bottom: none;
             padding: 10px 20px;
-            margin: 5px;
+            margin-right: 5px;
             cursor: pointer;
             font-size: 16px;
+            border-radius: 5px 5px 0 0;
+            transition: background-color 0.3s;
         }
-        .button-container button:hover {
-            background-color: #45a049;
+        .tab:hover {
+            background-color: #ddd;
+        }
+        .tab.active {
+            background-color: white;
+            font-weight: bold;
+            border-bottom: 2px solid white; /* タブの下線を消す */
         }
         .content {
             display: none;
             padding: 20px;
             background-color: white;
-            border-radius: 5px;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .content.active {
@@ -55,14 +65,14 @@
 </header>
 
 <div class="container">
-    <div class="button-container">
-        <button onclick="showContent('mechanics')">力学</button>
-        <button onclick="showContent('electromagnetism')">電磁気学</button>
-        <button onclick="showContent('waves')">波動</button>
-        <button onclick="showContent('thermodynamics')">熱力学</button>
+    <div class="tab-container">
+        <div class="tab active" onclick="showContent('mechanics')">力学</div>
+        <div class="tab" onclick="showContent('electromagnetism')">電磁気学</div>
+        <div class="tab" onclick="showContent('waves')">波動</div>
+        <div class="tab" onclick="showContent('thermodynamics')">熱力学</div>
     </div>
 
-    <div id="mechanics" class="content">
+    <div id="mechanics" class="content active">
         <h2>力学</h2>
         <p>ここに力学の解説を書きます。</p>
     </div>
@@ -85,18 +95,7 @@
 
 <script>
     function showContent(sectionId) {
-        // すべてのコンテンツを非表示にする
-        document.querySelectorAll('.content').forEach(function(content) {
-            content.classList.remove('active');
-        });
-
-        // 選択されたセクションを表示する
-        document.getElementById(sectionId).classList.add('active');
-    }
-
-    // 初期表示として力学のセクションを表示
-    showContent('mechanics');
-</script>
-
-</body>
-</html>
+        // すべてのタブとコンテンツを非アクティブにする
+        document.querySelectorAll('.tab').forEach(function(tab) {
+            tab.classList.remove('active');
+       
