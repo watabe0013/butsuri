@@ -2,70 +2,96 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>高校物理解説</title>
+  <title>高校物理解説 - シングルページ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <!-- ヘッダー -->
   <header class="site-header">
     <div class="logo-and-title">
-      <!-- シンボルマーク -->
       <img src="assets/symbol.png" alt="ロゴ" class="site-logo">
       <h1>高校物理解説</h1>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="force.html">力学</a></li>
-        <li><a href="electromagnetism.html">電磁気学</a></li>
-        <li><a href="thermodynamics.html">熱力学</a></li>
-        <li><a href="wave.html">波動</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- メインコンテンツ -->
-  <main class="site-main">
-    <!-- ヒーローセクション -->
-    <section class="hero">
-      <h2>物理の基礎をわかりやすく解説！</h2>
-      <p>力学・電磁気学・熱力学・波動など、高校物理の主要分野を図解でサポート</p>
-    </section>
+  <!-- コンテナ: 左側がサイドバー、右側がメインコンテンツ -->
+  <div class="container">
+    <!-- サイドバー -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="#article1">力学の基礎</a></li>
+          <li><a href="#article2">電磁気学の基礎</a></li>
+          <li><a href="#article3">熱力学の基礎</a></li>
+          <li><a href="#article4">波動の基礎</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-    <!-- カテゴリ紹介 -->
-    <section class="categories">
-      <h3>分野別カテゴリー</h3>
-      <div class="category-cards">
-        <a href="force.html" class="category-card">
-          <h4>力学</h4>
-          <p>物体の運動やエネルギーの基礎</p>
-        </a>
-        <a href="electromagnetism.html" class="category-card">
-          <h4>電磁気学</h4>
-          <p>電気や磁気の現象を学ぶ</p>
-        </a>
-        <a href="thermodynamics.html" class="category-card">
-          <h4>熱力学</h4>
-          <p>熱とエネルギー変換の仕組み</p>
-        </a>
-        <a href="wave.html" class="category-card">
-          <h4>波動</h4>
-          <p>振動・波の基礎原理を解説</p>
-        </a>
-      </div>
-    </section>
+    <!-- メインコンテンツ (1ページにまとめた記事) -->
+    <main class="site-main">
+      <!-- 記事1: 力学の基礎 -->
+      <section id="article1" class="article-section">
+        <h2>力学の基礎</h2>
+        <p>
+          ここでは物体の運動やエネルギーのやりとりなど、力学分野の超基本事項を解説します。
+        </p>
+        <figure>
+          <img src="assets/sample-force.png" alt="力学のイメージ図">
+          <figcaption>物体に働く力のイメージ</figcaption>
+        </figure>
+        <p>
+          例：ニュートンの第二法則 <strong>F = ma</strong> などなど。
+        </p>
+      </section>
 
-    <!-- 最新記事一覧 (手動で更新するか、JSで動的にリスト化する方法も) -->
-    <section class="latest-articles">
-      <h3>最新記事</h3>
-      <ul>
-        <li><a href="article-sample.html">サンプル記事 (2025-02-23)</a></li>
-        <!-- 他の記事も手動で追加 -->
-      </ul>
-    </section>
-  </main>
+      <!-- 記事2: 電磁気学の基礎 -->
+      <section id="article2" class="article-section">
+        <h2>電磁気学の基礎</h2>
+        <p>
+          電荷、電流、磁場など電気と磁気の基礎を扱います。
+        </p>
+        <figure>
+          <img src="assets/sample-electromagnetism.png" alt="電磁気のイメージ図">
+          <figcaption>電磁気学の図解</figcaption>
+        </figure>
+        <p>
+          例：クーロンの法則 <em>F = k (q1 q2 / r^2)</em> など。
+        </p>
+      </section>
 
-  <!-- フッター -->
+      <!-- 記事3: 熱力学の基礎 -->
+      <section id="article3" class="article-section">
+        <h2>熱力学の基礎</h2>
+        <p>
+          熱とエネルギー変換に関する分野です。熱量、内部エネルギー、仕事、エントロピーなど。
+        </p>
+        <figure>
+          <img src="assets/sample-thermodynamics.png" alt="熱力学のイメージ図">
+          <figcaption>熱力学の図解</figcaption>
+        </figure>
+        <p>
+          例：熱力学第一法則 <strong>ΔU = Q - W</strong> など。
+        </p>
+      </section>
+
+      <!-- 記事4: 波動の基礎 -->
+      <section id="article4" class="article-section">
+        <h2>波動の基礎</h2>
+        <p>
+          振動や波に関する分野です。音波、光波、水面波など多様な波があります。
+        </p>
+        <figure>
+          <img src="assets/sample-wave.png" alt="波動のイメージ図">
+          <figcaption>波の振動イメージ</figcaption>
+        </figure>
+        <p>
+          例：波の基本式 <em>v = f λ</em>（波の速さ <em>v</em> は周波数 <em>f</em> と波長 <em>λ</em> の積）
+        </p>
+      </section>
+    </main>
+  </div>
+
   <footer class="site-footer">
     <p>© 2025 高校物理解説</p>
     <p><a href="https://github.com/ユーザー名/リポジトリ名/issues">お問い合わせ</a></p>
