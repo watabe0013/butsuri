@@ -1,4 +1,4 @@
-/* ベーシックリセット */
+/* リセット */
 * {
   margin: 0;
   padding: 0;
@@ -15,90 +15,75 @@ body {
   background-color: #0b2340;
   color: #fff;
   padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .logo-and-title {
   display: flex;
   align-items: center;
 }
-
 .site-logo {
   height: 50px;
   margin-right: 0.5rem;
 }
-
 .site-header h1 {
   margin: 0;
 }
 
-.main-nav ul {
-  list-style: none;
+/* コンテナ: サイドバー + メイン */
+.container {
   display: flex;
-  gap: 1rem;
 }
 
-.main-nav a {
-  color: #fff;
+/* サイドバー */
+.sidebar {
+  width: 200px;
+  background-color: #f0f0f0;
+  min-height: 100vh; /* 左サイドバーを画面全体の高さに合わせる */
+  padding: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+}
+
+.sidebar a {
   text-decoration: none;
+  color: #333;
   font-weight: bold;
 }
 
-.main-nav a.active {
-  text-decoration: underline;
+.sidebar a:hover {
+  color: #000;
 }
 
 /* メインコンテンツ */
 .site-main {
+  flex: 1;
   padding: 1rem;
 }
 
-.hero {
-  background-color: #e0eaf4;
-  padding: 1rem;
-  margin-bottom: 1rem;
+/* 記事セクション */
+.article-section {
+  margin-bottom: 2rem;
+}
+
+.article-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.article-section figure {
+  margin: 1rem 0;
   text-align: center;
 }
 
-.categories {
-  margin-bottom: 2rem;
-}
-
-.category-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.category-card {
-  display: block;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  text-decoration: none;
-  color: #333;
-  width: 200px;
-  border-radius: 8px;
-  background: #fff;
-  transition: background 0.2s;
-}
-
-.category-card:hover {
-  background: #f4f4f4;
-}
-
-.latest-articles {
-  margin-bottom: 2rem;
-}
-
-.latest-articles ul {
-  list-style: disc;
-  margin-left: 1.5rem;
-}
-
-article {
-  margin-bottom: 2rem;
+.article-section figcaption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
 }
 
 /* フッター */
@@ -107,20 +92,19 @@ article {
   color: #333;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
 }
 
-/* メディアクエリ: スマホ対応 */
-@media (max-width: 600px) {
-  .main-nav ul {
+/* スマホ対応 */
+@media (max-width: 800px) {
+  .container {
     flex-direction: column;
   }
-
-  .category-cards {
-    flex-direction: column;
-  }
-
-  .category-card {
+  .sidebar {
     width: 100%;
+    min-height: auto;
+    order: 1; /* サイドバーを上or下に移動したい場合は適宜調整 */
+  }
+  .site-main {
+    order: 2;
   }
 }
