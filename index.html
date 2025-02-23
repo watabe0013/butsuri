@@ -1,94 +1,191 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>高校物理解説 - シングルページ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+
+  <!-- ヘッダー(上部ナビゲーション) -->
   <header class="site-header">
     <div class="logo-and-title">
-      <img src="assets/symbol.png" alt="ロゴ" class="site-logo">
+      <img src="assets/symbol.png" alt="シンボルマーク" class="site-logo">
       <h1>高校物理解説</h1>
     </div>
+    <nav class="top-nav">
+      <ul>
+        <!-- トップカテゴリへのリンク -->
+        <li><a href="#force">力学</a></li>
+        <li><a href="#electromagnetism">電磁気学</a></li>
+        <li><a href="#thermodynamics">熱力学</a></li>
+        <li><a href="#wave">波動</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- コンテナ: 左側がサイドバー、右側がメインコンテンツ -->
+  <!-- メインコンテナ: 左側にサイドバー、右側にメインコンテンツ -->
   <div class="container">
-    <!-- サイドバー -->
+
+    <!-- サイドバー (カテゴリ内サブトピックへ移動するボタン) -->
     <aside class="sidebar">
-      <nav>
-        <ul>
-          <li><a href="#article1">力学の基礎</a></li>
-          <li><a href="#article2">電磁気学の基礎</a></li>
-          <li><a href="#article3">熱力学の基礎</a></li>
-          <li><a href="#article4">波動の基礎</a></li>
-        </ul>
-      </nav>
+      <h2>サブメニュー</h2>
+
+      <!-- 力学サブトピック -->
+      <h3>力学</h3>
+      <ul>
+        <li><a href="#force-motion">運動方程式</a></li>
+        <li><a href="#force-twobody">2体問題</a></li>
+      </ul>
+
+      <!-- 電磁気学サブトピック -->
+      <h3>電磁気学</h3>
+      <ul>
+        <li><a href="#electro-coulomb">クーロンの法則</a></li>
+        <li><a href="#electro-field">電場の式</a></li>
+      </ul>
+
+      <!-- 熱力学サブトピック -->
+      <h3>熱力学</h3>
+      <ul>
+        <li><a href="#thermo-firstlaw">熱力学第一法則</a></li>
+        <li><a href="#thermo-entropy">エントロピー</a></li>
+      </ul>
+
+      <!-- 波動サブトピック -->
+      <h3>波動</h3>
+      <ul>
+        <li><a href="#wave-basic">基本式 v = fλ</a></li>
+        <li><a href="#wave-interference">干渉と回折</a></li>
+      </ul>
     </aside>
 
-    <!-- メインコンテンツ (1ページにまとめた記事) -->
+    <!-- メインコンテンツ -->
     <main class="site-main">
-      <!-- 記事1: 力学の基礎 -->
-      <section id="article1" class="article-section">
-        <h2>力学の基礎</h2>
-        <p>
-          ここでは物体の運動やエネルギーのやりとりなど、力学分野の超基本事項を解説します。
-        </p>
-        <figure>
-          <img src="assets/sample-force.png" alt="力学のイメージ図">
-          <figcaption>物体に働く力のイメージ</figcaption>
-        </figure>
-        <p>
-          例：ニュートンの第二法則 <strong>F = ma</strong> などなど。
-        </p>
+
+      <!-- 力学セクション -->
+      <section id="force">
+        <h2>力学 (Mechanics)</h2>
+        <p>物体の運動やエネルギーなど、力学に関する基礎を解説します。</p>
+
+        <!-- 運動方程式 -->
+        <article id="force-motion">
+          <h3>運動方程式</h3>
+          <p>
+            代表的な式として <strong>F = ma</strong> があります。<br>
+            物体の加速度 a は、質量 m と外力 F によって決定されます。
+          </p>
+          <figure>
+            <img src="assets/sample-force1.png" alt="運動方程式の図解">
+            <figcaption>運動方程式のイメージ図</figcaption>
+          </figure>
+        </article>
+
+        <!-- 2体問題 -->
+        <article id="force-twobody">
+          <h3>2体問題</h3>
+          <p>
+            2つの質点がお互いに引力・斥力で相互作用する問題。天体の運動などで頻出です。
+          </p>
+          <figure>
+            <img src="assets/sample-force2.png" alt="2体問題の図解">
+            <figcaption>2体の相互作用イメージ</figcaption>
+          </figure>
+        </article>
       </section>
 
-      <!-- 記事2: 電磁気学の基礎 -->
-      <section id="article2" class="article-section">
-        <h2>電磁気学の基礎</h2>
-        <p>
-          電荷、電流、磁場など電気と磁気の基礎を扱います。
-        </p>
-        <figure>
-          <img src="assets/sample-electromagnetism.png" alt="電磁気のイメージ図">
-          <figcaption>電磁気学の図解</figcaption>
-        </figure>
-        <p>
-          例：クーロンの法則 <em>F = k (q1 q2 / r^2)</em> など。
-        </p>
+      <!-- 電磁気学セクション -->
+      <section id="electromagnetism">
+        <h2>電磁気学 (Electromagnetism)</h2>
+        <p>電荷、電流、磁場、電場など、電気と磁気に関する基礎を解説します。</p>
+
+        <!-- クーロンの法則 -->
+        <article id="electro-coulomb">
+          <h3>クーロンの法則</h3>
+          <p>
+            静電気力は電荷量 q<sub>1</sub>, q<sub>2</sub> と距離 r に依存。<br>
+            <em>F = k (q<sub>1</sub> q<sub>2</sub>) / r<sup>2</sup></em>.
+          </p>
+          <figure>
+            <img src="assets/sample-electro1.png" alt="クーロンの法則図解">
+            <figcaption>クーロンの法則のイメージ</figcaption>
+          </figure>
+        </article>
+
+        <!-- 電場の式 -->
+        <article id="electro-field">
+          <h3>電場の式</h3>
+          <p>
+            点電荷が作る電場 E は <em>E = k q / r<sup>2</sup></em> で表されます。
+          </p>
+          <figure>
+            <img src="assets/sample-electro2.png" alt="電場のイメージ図">
+            <figcaption>電場の概念図</figcaption>
+          </figure>
+        </article>
       </section>
 
-      <!-- 記事3: 熱力学の基礎 -->
-      <section id="article3" class="article-section">
-        <h2>熱力学の基礎</h2>
-        <p>
-          熱とエネルギー変換に関する分野です。熱量、内部エネルギー、仕事、エントロピーなど。
-        </p>
-        <figure>
-          <img src="assets/sample-thermodynamics.png" alt="熱力学のイメージ図">
-          <figcaption>熱力学の図解</figcaption>
-        </figure>
-        <p>
-          例：熱力学第一法則 <strong>ΔU = Q - W</strong> など。
-        </p>
+      <!-- 熱力学セクション -->
+      <section id="thermodynamics">
+        <h2>熱力学 (Thermodynamics)</h2>
+        <p>熱とエネルギー変換、熱機関などに関する分野です。</p>
+
+        <!-- 熱力学第一法則 -->
+        <article id="thermo-firstlaw">
+          <h3>熱力学第一法則</h3>
+          <p>
+            <em>ΔU = Q - W</em>: 内部エネルギーの変化量 ΔU は、加えられた熱量 Q から外へした仕事 W を引いたもの。
+          </p>
+          <figure>
+            <img src="assets/sample-thermo1.png" alt="熱力学第一法則の図解">
+            <figcaption>熱力学第一法則イメージ</figcaption>
+          </figure>
+        </article>
+
+        <!-- エントロピー -->
+        <article id="thermo-entropy">
+          <h3>エントロピー</h3>
+          <p>
+            乱雑さを示す指標で、自然界ではエントロピーが増大する方向に進みます。
+          </p>
+          <figure>
+            <img src="assets/sample-thermo2.png" alt="エントロピーの図解">
+            <figcaption>エントロピーのイメージ</figcaption>
+          </figure>
+        </article>
       </section>
 
-      <!-- 記事4: 波動の基礎 -->
-      <section id="article4" class="article-section">
-        <h2>波動の基礎</h2>
-        <p>
-          振動や波に関する分野です。音波、光波、水面波など多様な波があります。
-        </p>
-        <figure>
-          <img src="assets/sample-wave.png" alt="波動のイメージ図">
-          <figcaption>波の振動イメージ</figcaption>
-        </figure>
-        <p>
-          例：波の基本式 <em>v = f λ</em>（波の速さ <em>v</em> は周波数 <em>f</em> と波長 <em>λ</em> の積）
-        </p>
+      <!-- 波動セクション -->
+      <section id="wave">
+        <h2>波動 (Wave)</h2>
+        <p>振動や波に関する基礎を解説します。</p>
+
+        <!-- 基本式 -->
+        <article id="wave-basic">
+          <h3>基本式 v = fλ</h3>
+          <p>
+            波の速さ v は、周波数 f と波長 λ の積で表されます。
+          </p>
+          <figure>
+            <img src="assets/sample-wave1.png" alt="波のイメージ図">
+            <figcaption>波の基本式イメージ</figcaption>
+          </figure>
+        </article>
+
+        <!-- 干渉と回折 -->
+        <article id="wave-interference">
+          <h3>干渉と回折</h3>
+          <p>
+            波が重なり合うときの位相による強め合い・弱め合い、障害物を回り込む現象など。
+          </p>
+          <figure>
+            <img src="assets/sample-wave2.png" alt="干渉と回折のイメージ図">
+            <figcaption>干渉・回折の図解</figcaption>
+          </figure>
+        </article>
       </section>
+
     </main>
   </div>
 
@@ -96,5 +193,6 @@
     <p>© 2025 高校物理解説</p>
     <p><a href="https://github.com/ユーザー名/リポジトリ名/issues">お問い合わせ</a></p>
   </footer>
+
 </body>
 </html>
