@@ -15,44 +15,80 @@ body {
   background-color: #0b2340;
   color: #fff;
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo-and-title {
   display: flex;
   align-items: center;
 }
+
 .site-logo {
   height: 50px;
   margin-right: 0.5rem;
 }
+
 .site-header h1 {
   margin: 0;
 }
 
-/* コンテナ: サイドバー + メイン */
+/* 上部ナビゲーション */
+.top-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.top-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+/* メインコンテナ: 左にサイドバー、右にメイン */
 .container {
   display: flex;
+  min-height: 100vh; /* 左サイドを画面全体の高さに合わせる場合 */
 }
 
 /* サイドバー */
 .sidebar {
-  width: 200px;
+  width: 220px;
   background-color: #f0f0f0;
-  min-height: 100vh; /* 左サイドバーを画面全体の高さに合わせる */
   padding: 1rem;
+  border-right: 2px solid #ccc;
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+}
+
+.sidebar h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  border-bottom: 1px solid #999;
+  padding-bottom: 2px;
 }
 
 .sidebar ul {
   list-style: none;
-}
-
-.sidebar li {
   margin-bottom: 1rem;
 }
 
+.sidebar li {
+  margin: 0.5rem 0;
+}
+
 .sidebar a {
-  text-decoration: none;
   color: #333;
+  text-decoration: none;
   font-weight: bold;
 }
 
@@ -66,21 +102,33 @@ body {
   padding: 1rem;
 }
 
-/* 記事セクション */
-.article-section {
+/* セクション区切り */
+.site-main section {
   margin-bottom: 2rem;
 }
 
-.article-section h2 {
-  margin-bottom: 0.5rem;
+.site-main h2 {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
 }
 
-.article-section figure {
+.site-main article {
+  margin-bottom: 1rem;
+}
+
+.site-main h3 {
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #0b2340;
+  padding-left: 0.5rem;
+}
+
+figure {
   margin: 1rem 0;
   text-align: center;
 }
 
-.article-section figcaption {
+figcaption {
   font-size: 0.9rem;
   color: #666;
   margin-top: 0.5rem;
@@ -101,8 +149,8 @@ body {
   }
   .sidebar {
     width: 100%;
-    min-height: auto;
-    order: 1; /* サイドバーを上or下に移動したい場合は適宜調整 */
+    border-right: none;
+    border-bottom: 2px solid #ccc;
   }
   .site-main {
     order: 2;
