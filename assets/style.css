@@ -41,6 +41,10 @@ body {
   gap: 1rem;
 }
 
+.top-nav li {
+  margin: 0;
+}
+
 .top-nav a {
   color: #fff;
   text-decoration: none;
@@ -51,10 +55,14 @@ body {
   text-decoration: underline;
 }
 
-/* メインコンテナ: 左にサイドバー、右にメイン */
+.top-nav a.active {
+  text-decoration: underline;
+}
+
+/* コンテナ (サイドバー + メイン) */
 .container {
   display: flex;
-  min-height: 100vh; /* 左サイドを画面全体の高さに合わせる場合 */
+  min-height: 100vh; /* optional: サイドを画面全体の高さに合わせる */
 }
 
 /* サイドバー */
@@ -69,17 +77,8 @@ body {
   margin-bottom: 1rem;
 }
 
-.sidebar h3 {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  border-bottom: 1px solid #999;
-  padding-bottom: 2px;
-}
-
 .sidebar ul {
   list-style: none;
-  margin-bottom: 1rem;
 }
 
 .sidebar li {
@@ -102,27 +101,27 @@ body {
   padding: 1rem;
 }
 
-/* セクション区切り */
 .site-main section {
-  margin-bottom: 2rem;
-}
-
-.site-main h2 {
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .site-main article {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.site-main h2 {
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
 }
 
 .site-main h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   border-left: 4px solid #0b2340;
   padding-left: 0.5rem;
 }
 
+/* 図やキャプション */
 figure {
   margin: 1rem 0;
   text-align: center;
@@ -137,9 +136,9 @@ figcaption {
 /* フッター */
 .site-footer {
   background-color: #eee;
-  color: #333;
   text-align: center;
   padding: 1rem;
+  margin-top: auto; /* フッターを下部に固定したい場合はレイアウト調整が必要 */
 }
 
 /* スマホ対応 */
@@ -151,8 +150,5 @@ figcaption {
     width: 100%;
     border-right: none;
     border-bottom: 2px solid #ccc;
-  }
-  .site-main {
-    order: 2;
   }
 }
