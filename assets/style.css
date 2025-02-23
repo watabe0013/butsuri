@@ -15,9 +15,6 @@ body {
   background-color: #0b2340;
   color: #fff;
   padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .logo-and-title {
@@ -34,21 +31,23 @@ body {
   margin: 0;
 }
 
-/* 上部ナビゲーション */
+/* トップナビゲーション（タイトルの下に配置） */
+.top-nav {
+  margin-top: 1rem;
+}
+
 .top-nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
-}
-
-.top-nav li {
-  margin: 0;
+  margin-top: 0.5rem;
 }
 
 .top-nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  padding: 0.3rem 0.5rem;
 }
 
 .top-nav a:hover {
@@ -59,13 +58,12 @@ body {
   text-decoration: underline;
 }
 
-/* コンテナ (サイドバー + メイン) */
+/* メイン構造 */
 .container {
   display: flex;
-  min-height: 100vh; /* optional: サイドを画面全体の高さに合わせる */
+  min-height: 100vh; /* optional */
 }
 
-/* サイドバー */
 .sidebar {
   width: 220px;
   background-color: #f0f0f0;
@@ -95,16 +93,12 @@ body {
   color: #000;
 }
 
-/* メインコンテンツ */
 .site-main {
   flex: 1;
   padding: 1rem;
 }
 
-.site-main section {
-  margin-bottom: 1.5rem;
-}
-
+.site-main section,
 .site-main article {
   margin-bottom: 1.5rem;
 }
@@ -121,12 +115,11 @@ body {
   padding-left: 0.5rem;
 }
 
-/* 図やキャプション */
+/* 画像やキャプション */
 figure {
   margin: 1rem 0;
   text-align: center;
 }
-
 figcaption {
   font-size: 0.9rem;
   color: #666;
@@ -138,7 +131,7 @@ figcaption {
   background-color: #eee;
   text-align: center;
   padding: 1rem;
-  margin-top: auto; /* フッターを下部に固定したい場合はレイアウト調整が必要 */
+  margin-top: auto;
 }
 
 /* スマホ対応 */
