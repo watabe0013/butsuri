@@ -17,9 +17,11 @@ body {
   padding: 1rem;
 }
 
+/* タイトル部分（シンボルマーク + サイト名） */
 .logo-and-title {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem; /* カテゴリボタンとの間隔 */
 }
 
 .site-logo {
@@ -27,27 +29,38 @@ body {
   margin-right: 0.5rem;
 }
 
-.site-header h1 {
+/* タイトル文字をリンクに */
+.logo-and-title h1 {
   margin: 0;
+  font-size: 1.5rem;
 }
 
-/* トップナビゲーション（タイトルの下に配置） */
-.top-nav {
-  margin-top: 1rem;
+.logo-and-title h1 a {
+  color: #fff;
+  text-decoration: none;
 }
 
+.logo-and-title h1 a:hover {
+  text-decoration: underline;
+}
+
+/* カテゴリボタン（トップナビ）を中央揃え */
 .top-nav ul {
   list-style: none;
   display: flex;
+  justify-content: center; /* 中央揃え */
   gap: 1rem;
-  margin-top: 0.5rem;
+}
+
+.top-nav li {
+  margin: 0;
 }
 
 .top-nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem 0.6rem;
 }
 
 .top-nav a:hover {
@@ -58,12 +71,13 @@ body {
   text-decoration: underline;
 }
 
-/* メイン構造 */
+/* コンテナ (サイドバー + メイン) */
 .container {
   display: flex;
-  min-height: 100vh; /* optional */
+  min-height: 100vh;
 }
 
+/* サイドバー */
 .sidebar {
   width: 220px;
   background-color: #f0f0f0;
@@ -93,6 +107,7 @@ body {
   color: #000;
 }
 
+/* メインコンテンツ */
 .site-main {
   flex: 1;
   padding: 1rem;
@@ -115,7 +130,7 @@ body {
   padding-left: 0.5rem;
 }
 
-/* 画像やキャプション */
+/* 図やキャプション */
 figure {
   margin: 1rem 0;
   text-align: center;
