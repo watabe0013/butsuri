@@ -10,10 +10,12 @@
   <!-- ヘッダー -->
   <header class="site-header">
     <div class="logo-and-title">
-      <img src="assets/symbol.png" alt="シンボルマーク" class="site-logo">
-      <h1>高校物理解説</h1>
+      <!-- シンボルマークを symbol.jpg に変更 -->
+      <img src="assets/symbol.jpg" alt="シンボルマーク" class="site-logo">
+      <!-- タイトル文字をホームへのリンクに -->
+      <h1><a href="index.html">高校物理解説</a></h1>
     </div>
-    <!-- カテゴリボタンをタイトルの下に配置 -->
+    <!-- カテゴリボタン（トップナビ）を中央揃え -->
     <nav class="top-nav">
       <ul>
         <li><a href="force.html">力学</a></li>
@@ -24,21 +26,36 @@
     </nav>
   </header>
 
-  <main class="site-main">
-    <section>
-      <h2>物理を数学の言葉で理解するとスッキリ！</h2>
-      <p>
-        例えば力学では、力学的エネルギー保存則や運動量保存則など、複数の法則が登場しますが、
-        これらは結局、<strong>運動方程式を数学的に書き換えただけ</strong>にすぎません。
-      </p>
-      <p>
-        最初は難しく感じるかもしれませんが、このサイトでは
-        <strong>図解でわかりやすく解説</strong>するので安心してください。
-        「数学の言葉で理解する」という感覚が身につけば、
-        <strong>物理が一気に簡単になる</strong>はずです！
-      </p>
-    </section>
-  </main>
+  <!-- ホームでも左側にサイドバーを表示 -->
+  <div class="container">
+    <!-- サイドバー -->
+    <aside class="sidebar">
+      <h2>カテゴリ</h2>
+      <ul>
+        <li><a href="force.html">力学</a></li>
+        <li><a href="electromagnetism.html">電磁気学</a></li>
+        <li><a href="thermodynamics.html">熱力学</a></li>
+        <li><a href="wave.html">波動</a></li>
+      </ul>
+    </aside>
+
+    <!-- メインコンテンツ -->
+    <main class="site-main">
+      <section>
+        <h2>物理を数学の言葉で理解するとスッキリ！</h2>
+        <p>
+          例えば力学では、力学的エネルギー保存則や運動量保存則など法則がいくつか出てきますが、
+          これらは実は <strong>運動方程式を数学的に書き換えただけ</strong> にすぎません。
+        </p>
+        <p>
+          最初は難しく感じるかもしれませんが、図解を用いて
+          <strong>わかりやすく解説</strong> するので安心してください。
+          「数学の言葉で理解する」という感覚が身につけば、
+          <strong>物理が一気に簡単になる</strong>はずです！
+        </p>
+      </section>
+    </main>
+  </div>
 
   <footer class="site-footer">
     <p>© 2025 高校物理解説</p>
