@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>力学 - 高校物理解説</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- MathJax for LaTeX-style equations -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
 
+  <header class="site-header">
+    <div class="logo-and-title">
+      <img src="assets/symbol.jpg" alt="シンボルマーク" class="site-logo">
+      <h1><a href="index.html">高校物理解説</a></h1>
+    </div>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="force.html" class="active">力学</a></li>
+        <li><a href="electromagnetism.html">電磁気学</a></li>
+        <li><a href="thermodynamics.html">熱力学</a></li>
+        <li><a href="wave.html">波動</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- サイドバー -->
+    <aside class="sidebar">
+      <h2>力学サブトピック</h2>
+      <ul>
+        <li><a href="#calculus">微分積分と物理</a></li>
+        <li><a href="#newton">ニュートンの三法則</a></li>
+        <li><a href="#impulse">力積と運動量</a></li>
+        <li><a href="#twobody">2体問題と保存則</a></li>
+        <li><a href="#energy">仕事とエネルギー</a></li>
+        <li><a href="#spring">バネとエネルギー保存</a></li>
+        <li><a href="#summary">まとめ</a></li>
+      </ul>
+    </aside>
+
+    <!-- メインコンテンツ -->
+    <main class="site-main">
+
+      <section id="calculus">
+        <h2>微分積分が拓く物理の世界</h2>
+        <p>
+          物理では、「変化するもの」を扱うことが多くあります。<br>
+          たとえば、物体の速さがどう変わっていくか、力を加えたらどれだけ動くか…。
+          こうした問いに答えるために使うのが、<strong>微分と積分</strong>という数学の道具です。
+        </p>
+        <p>
+          聞き慣れない人には難しく感じるかもしれませんが、実は微分積分が分かれば、力学は驚くほどシンプルで統一的な世界になります。
+          ここでは、図や具体例も交えて、微分と積分の考え方を一から説明し、それが物理のどこでどう使われているのかを見ていきましょう。
+        </p>
+
+        <h3>微分 ― 変化の瞬間を捉える</h3>
+        <p>
+          微分とは、ある量が「どれだけ変化するか」を、極限まで小さい単位で捉える操作です。
+          関数 f(x) を考え、x を x + \Delta x に動かすと、
+          その変化率は次のように書けます：
+        </p>
+        <p>
+\[
+          \frac{f(x+\Delta x) - f(x)}{\Delta x}
+\]
+        </p>
+        <p>
+          この間隔 \Delta x を極限まで小さくすると、接線の傾きとなり、これが「微分」です：
+        </p>
+        <p>
+\[
+          \frac{dy}{dx} = \lim_{\Delta x \to 0} \frac{f(x+\Delta x) - f(x)}{\Delta x}
+\]
+        </p>
+        <!-- 図1をここに挿入予定 -->
+        <figure>
+          <!-- <img src="assets/derivative-graph.png" alt="微分の図"> -->
+          <figcaption>図1：割線と接線のイメージ（後で画像追加）</figcaption>
+        </figure>
+
+        <h4>微分公式の導出例</h4>
+        <p>
+          f(x) = x^n を微分するには二項定理を使います：
+        </p>
+        <p>
+\[
+          (x + \Delta x)^n = x^n + n x^{n-1} \Delta x + \cdots
+          \Rightarrow \frac{d}{dx} (x^n) = n x^{n-1}
+\]
+        </p>
+
+        <h3>積分 ― 細かい変化の積み重ね</h3>
+        <p>
+          微分が「瞬間の変化」なら、積分は「変化の合計」です。
+          特に、関数のグラフの下の面積を求めるときに登場します。
+        </p>
+        <p>
+\[
+          \text{面積 } S = \int F(x) \, dx
+\]
+        </p>
+        <!-- 図2をここに挿入予定 -->
+        <figure>
+          <!-- <img src="assets/integral-graph.png" alt="積分の図"> -->
+          <figcaption>図2：積分の区分求積法（後で画像追加）</figcaption>
+        </figure>
+
+        <h4>微分と積分の関係</h4>
+        <p>
+          面積 S(x) を x で微分すると元の関数に戻ります：
+        </p>
+        <p>
+\[
+          \frac{dS}{dx} = F(x)
+\]
+        </p>
+
+        <h3>運動方程式とのつながり</h3>
+        <p>
+          物理に戻ると、運動方程式は：
+        </p>
+        <p>
+\[
+          F = ma = m \frac{d^2 x}{dt^2}
+\]
+        </p>
+        <p>
+          これを積分すると、運動量やエネルギーに関する保存則が現れます。
+        </p>
+        <ul>
+          <li>力を時間で積分 → <strong>力積</strong> → 運動量の変化</li>
+          <li>力を距離で積分 → <strong>仕事</strong> → 運動エネルギーの変化</li>
+        </ul>
+        <p>
+          微分：瞬間の関係　／　積分：全体の変化  
+        </p>
+
+        <h3>まとめ</h3>
+        <p>
+          微分と積分は、物理を数学で表現するための「翻訳装置」です。  
+          微分：変化の速さ（速度・加速度）、積分：変化の積み重ね（運動量・エネルギー）  
+          運動方程式は微分方程式であり、それを積分することで保存則が導かれます。
+        </p>
+        <p>
+          この2つを使いこなせば、力学はシンプルに理解できるようになります。
+          次回は、力学のすべての土台である <strong>ニュートンの三法則</strong> を見ていきましょう。
+        </p>
+      </section>
+
+      <!-- 今後の記事としてプレースホルダー -->
+      <section id="newton"><h2>ニュートンの三法則（次回）</h2></section>
+      <section id="impulse"><h2>力積と運動量（予定）</h2></section>
+      <section id="twobody"><h2>2体問題と保存則（予定）</h2></section>
+      <section id="energy"><h2>仕事と運動エネルギー（予定）</h2></section>
+      <section id="spring"><h2>バネの問題とエネルギー保存（予定）</h2></section>
+      <section id="summary"><h2>まとめ（予定）</h2></section>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2025 高校物理解説</p>
+    <p><a href="https://github.com/ユーザー名/リポジトリ名/issues">お問い合わせ</a></p>
+  </footer>
+
+</body>
+</html>
